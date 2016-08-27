@@ -411,9 +411,11 @@ module.exports = function (grunt) {
           dest: '<%= yeoman.dist %>',
           src: [
             '*.{ico,png,txt}',
-            '*.html',
+            '**/*.html',
+            '**/*.js',
+            'styles/**/*.css',
             'images/{,*/}*.{webp}',
-            'styles/fonts/{,*/}*.*'
+            'icons/{,*/}*.*'
           ]
         }, {
           expand: true,
@@ -422,17 +424,15 @@ module.exports = function (grunt) {
           src: ['generated/*']
         }, {
           expand: true,
-          cwd: '.',
-          src: 'bower_components/bootstrap-sass-official/assets/fonts/bootstrap/*',
-          dest: '<%= yeoman.dist %>'
-        }]
-      },
-      styles: {
-        expand: true,
-        cwd: '<%= yeoman.app %>/styles',
-        dest: '.tmp/styles/',
-        src: '{,*/}*.css'
-      }
+          cwd: 'bower_components',
+          src: '**/*',
+          dest: '<%= yeoman.dist %>/bower_components'
+        }, {
+          expand: true,
+          cwd: '.tmp/styles/',
+          dest: '<%= yeoman.dist %>/styles',
+          src: ['*.css']
+      }]}
     },
 
     // Run some tasks in parallel to speed up the build process
@@ -498,13 +498,7 @@ module.exports = function (grunt) {
     'ngtemplates',
     'concat',
     'ngAnnotate',
-    'copy:dist',
-    'cdnify',
-    'cssmin',
-    'uglify',
-    'filerev',
-    'usemin',
-    'htmlmin'
+    'copy:dist'
   ]);
 
   grunt.registerTask('default', [

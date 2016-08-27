@@ -1,15 +1,14 @@
-'use strict';
+var app = {
+    initialize: function() {
+        this.bindEvents();
+    },
+    bindEvents: function() {
+        document.addEventListener('deviceready', this.onDeviceReady, true);
+    },
 
-/**
- * @ngdoc function
- * @name revampedFitnessApp.controller:MainCtrl
- * @description
- * # MainCtrl
- * Controller of the revampedFitnessApp
- */
-angular.module('revampedFitnessApp')
-  .controller('MainCtrl', function (cordova) {
-	  cordova.ready.then(function () {
-	      alert('Cordova is ready');
-	  });
-  });
+    onDeviceReady: function() {
+        angular.element(document).ready(function() {
+            angular.bootstrap(document);
+        });
+    },
+};

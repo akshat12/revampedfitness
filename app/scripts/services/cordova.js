@@ -12,10 +12,9 @@ angular.module('revampedFitnessApp')
     var d = $q.defer(),
     resolved = false;
 
-    var self = this;
     this.ready = d.promise;
 
-            document.addEventListener('deviceready', function () {
+    document.addEventListener('deviceready', function () {
         resolved = true;
         d.resolve($window.cordova);
     });
@@ -24,10 +23,11 @@ angular.module('revampedFitnessApp')
     // event (just in case)
     setTimeout(function () {
         if (!resolved) {
-            if ($window.cordova) d.resolve($window.cordova);
+            if ($window.cordova) {
+                d.resolve($window.cordova);
+            }
         }
     }, 3000);
 
-    // Public API here
     return this;
   });
