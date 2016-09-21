@@ -9,6 +9,20 @@
  */
 function WorkoutsCtrl($scope) {
 	$scope.scrollBarItems = ['favorites', 'endurance', 'strength', 'speed'];
+
+	$scope.workoutRecords = [{
+		workoutTitle: 'Hangs',
+		record: {
+			weight: 70,
+			time: 5
+		}
+	}, {
+		workoutTitle: 'Press Clean',
+		record: {
+			weight: 80,
+			time: 9
+		}
+	}];
 }
 
 

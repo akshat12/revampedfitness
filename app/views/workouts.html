@@ -6,3 +6,11 @@
 		</r-scroll-button>
 	</div>
 </div>
+<div class="flex-column">
+	<div ng-repeat="item in workoutRecords">
+		<r-workout-button
+			workout-title="{{ item.workoutTitle }}"
+			record="item.record">
+		</r-workout-button>
+	</div>
+</div>
