@@ -1,15 +1,38 @@
+@import 'colors';
+@import 'typography';
+
 .flex-row {
 	display: flex;
 	flex-direction: row;
 }
 
-.scroll-button {
-	display: flex;
-	flex-direction: column;
-	margin: 15px;
-}
-
 .flex-column {
 	display: flex;
 	flex-direction: column;
+}
+
+.scroll-button {
+	@extend .flex-column;
+	margin: 15px;
+	text-align: center;
+}
+
+.button-title {
+	text-transform: uppercase;
+}
+
+.scroll-button {
+	.button-title {
+		color: map-get($colors, alto);
+	}
+}
+
+.scroll-button.active {
+	.button-title {
+		color: map-get($colors, cod-gray);
+	}
+
+	.highlight {
+		border: 1px solid map-get($colors, alizarin);
+	}
 }

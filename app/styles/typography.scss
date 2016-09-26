@@ -1,0 +1,49 @@
+$FontPath: "../fonts" !default;
+$FontName: "Lato" !default;
+$FontVersion: "1.0.0" !default;
+
+@mixin fontdef($FontPath, $FontName, $FontVersion, $FontType:"Regular") {
+  src: url('#{$FontPath}/#{$FontName}-#{$FontType}.ttf?v=#{$FontVersion}') format('truetype'),
+}
+
+@font-face {
+	font-family: "Lato";
+	@include fontdef($FontPath, $FontName, $FontVersion, "Black");
+	font-weight: 900;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Lato";
+	@include fontdef($FontPath, $FontName, $FontVersion, "Bold");
+	font-weight: 700;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Lato";
+	@include fontdef($FontPath, $FontName, $FontVersion, "BoldItalic");
+	font-weight: 700;
+	font-style: Italic;
+}
+
+@font-face {
+	font-family: "Lato";
+	@include fontdef($FontPath, $FontName, $FontVersion, "Italic");
+	font-weight: 400;
+	font-style: Italic;
+}
+
+@font-face {
+	font-family: "Lato";
+	@include fontdef($FontPath, $FontName, $FontVersion, "Regular");
+	font-weight: 400;
+	font-style: normal;
+}
+
+h4 {
+    font-family: 'Lato';
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 1.25;
+}
