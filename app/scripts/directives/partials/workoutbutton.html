@@ -1,6 +1,13 @@
-<div class="scroll-button">
-	<span>{{ $ctrl.workoutTitle }}</span>
-	<div ng-if="$ctrl.recordText">
-		<span>{{ $ctrl.recordText }}</span>
+<div class="workout-select-button">
+	<div class="flex-row flex-space-between">
+		<div class="flex-column">
+			<span class="button-title workout-button-title">{{ $ctrl.workoutTitle }}</span>
+			<div ng-if="$ctrl.recordText" class="workout-button-description">
+				<span>{{ $ctrl.recordText }}</span>
+			</div>
+		</div>
+		<div class="flex-column flex-align-center">
+			<i class="fa fa-heart-o workout-favorite-button" aria-hidden="true"></i>
+		</div>
 	</div>
 </div>

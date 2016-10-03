@@ -17,6 +17,14 @@
 	text-align: center;
 }
 
+.flex-align-center {
+	align-self: center;
+}
+
+.flex-space-between {
+	justify-content: space-between;
+}
+
 .button-title {
 	text-transform: uppercase;
 }
@@ -42,4 +50,26 @@
 
 .bottom-shadow {
 	border-bottom: 1px solid map-get($colors, alto);
+}
+
+.workout-select-button {
+	margin: 15px;
+
+	.workout-button-title {
+		@extend h4;
+		margin: 5px 0px 5px 0px;
+	}
+
+	.workout-button-description {
+		@extend h4;
+		font-size: 12px;
+		font-weight: 400;
+		color: map-get($colors, boulder);
+	}
+
+	.workout-favorite-button {
+		color: map-get($colors, alizarin);
+		font-weight: 900;
+		font-size: 17px;
+	}
 }
