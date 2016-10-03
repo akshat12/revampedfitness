@@ -13,7 +13,7 @@
 
 .scroll-button {
 	@extend .flex-column;
-	margin: 15px;
+	margin: 0px 15px 0px 15px;
 	text-align: center;
 }
 
@@ -25,6 +25,9 @@
 	.button-title {
 		color: map-get($colors, alto);
 	}
+	.highlight {
+		border: 1px solid transparent;
+	}
 }
 
 .scroll-button.active {
@@ -35,4 +38,8 @@
 	.highlight {
 		border: 1px solid map-get($colors, alizarin);
 	}
+}
+
+.bottom-shadow {
+	border-bottom: 1px solid map-get($colors, alto);
 }
